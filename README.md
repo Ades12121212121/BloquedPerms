@@ -1,16 +1,16 @@
-# 📖 BloquedPerms Wiki v1.11
+# 📖 BloquedPerms Wiki v1.12
 
 > Sistema de Bloqueo de Recetas con Tienda GUI para Minecraft
 
 **Autor:** PCR087  
 **Spigot:** https://www.spigotmc.org/resources/130781/  
-**Versión Actual:** 1.11
+**Versión Actual:** 1.12
 
 ---
 
 ## 📥 1. Instalación
 
-1. Descarga `BloquedPerms-1.11.jar`
+1. Descarga `BloquedPerms-1.12.jar`
 2. Colócalo en la carpeta `/plugins/`
 3. Reinicia el servidor
 
@@ -646,12 +646,58 @@ confirmation:
 
 ---
 
-## 🚀 23. Próximas Versiones (Roadmap)
+## 📜 20. Historial de Compras (v1.12)
 
-### v1.12 - Historial de Compras
+Consulta todas tus compras anteriores.
 
-- Guardar historial de compras por jugador
-- Comando /bloquedperms history
+```yaml
+history:
+  enabled: true
+  maxPerPlayer: 50
+  showInChat: true
+```
+
+### Comando:
+
+```
+/bloquedperms history [página]
+```
+
+### Datos guardados:
+
+- ID y nombre del item
+- Precio y tipo de moneda
+- XP gastado
+- Fecha y mundo
+
+---
+
+## 📜 23. Historial de Versiones
+
+| Versión | Característica Principal                 |
+| ------- | ---------------------------------------- |
+| v1.12   | Historial de Compras                     |
+| v1.11   | Confirmación de Compra                   |
+| v1.10   | Regiones de Comandos + Items como Precio |
+| v1.9    | Niveles de XP + Modo Economía            |
+| v1.8    | Múltiples Monedas                        |
+| v1.7    | Requisitos Previos                       |
+| v1.6    | Desbloqueos Temporales                   |
+| v1.5    | Descuentos por Grupo + ViaVersion Fix    |
+| v1.4    | Precios Dinámicos                        |
+| v1.3    | PlaceholderAPI                           |
+| v1.2    | Categorías                               |
+| v1.1    | Sistema de Páginas                       |
+| v1.0    | Versión inicial                          |
+
+---
+
+## 🚀 24. Próximas Versiones (Roadmap)
+
+### v1.13 - Devoluciones
+
+- Sistema de reembolso parcial
+- Configurable por item
 
 ### v2.0 - Animaciones de GUI
 
@@ -668,4 +714,4 @@ confirmation:
 
 ---
 
-_BloquedPerms v1.11 - Sistema de Bloqueo de Recetas_
+_BloquedPerms v1.12 - Sistema de Bloqueo de Recetas_
