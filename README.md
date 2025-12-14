@@ -1,10 +1,10 @@
-# 📖 BloquedPerms Wiki v1.7
+# 📖 BloquedPerms Wiki v1.8
 
 > Sistema de Bloqueo de Recetas con Tienda GUI para Minecraft
 
 **Autor:** PCR087  
 **Spigot:** https://www.spigotmc.org/resources/130781/  
-**Versión Actual:** 1.7
+**Versión Actual:** 1.8
 
 ---
 
@@ -16,12 +16,14 @@
 
 ### Dependencias:
 
-| Tipo          | Plugin              | Uso                |
-| ------------- | ------------------- | ------------------ |
-| ✅ Requerido  | LuckPerms           | Manejo de permisos |
-| ⭕ Opcional   | Vault + EssentialsX | Economía           |
-| ⭕ Opcional   | PlaceholderAPI      | Placeholders       |
-| ⭕ Compatible | ViaVersion 5.6.0+   | Multiversión       |
+| Tipo          | Plugin            | Uso                |
+| ------------- | ----------------- | ------------------ |
+| ✅ Requerido  | LuckPerms         | Manejo de permisos |
+| ⭕ Opcional   | Vault + Economía  | Dinero             |
+| ⭕ Opcional   | PlayerPoints      | Puntos (v1.8)      |
+| ⭕ Opcional   | TokenManager      | Tokens (v1.8)      |
+| ⭕ Opcional   | PlaceholderAPI    | Placeholders       |
+| ⭕ Compatible | ViaVersion 5.6.0+ | Multiversión       |
 
 ---
 
@@ -298,7 +300,49 @@ NETHERITE PICKAXE
 
 ---
 
-## 📂 10. Categorías (v1.2)
+## 💰 10. Múltiples Monedas (v1.8)
+
+Ahora puedes usar diferentes tipos de moneda para cada item.
+
+```yaml
+items:
+  # Item que cuesta DINERO (Vault)
+  diamond_pickaxe:
+    slot: 10
+    material: "DIAMOND_PICKAXE"
+    price: 1000
+    unlockId: "diamond_pickaxe"
+    currency: "vault" # Dinero ($1000)
+
+  # Item que cuesta PUNTOS (PlayerPoints)
+  diamond_sword:
+    slot: 11
+    material: "DIAMOND_SWORD"
+    price: 500
+    unlockId: "diamond_sword"
+    currency: "points" # 500 puntos
+
+  # Item que cuesta TOKENS (TokenManager)
+  netherite_pickaxe:
+    slot: 12
+    material: "NETHERITE_PICKAXE"
+    price: 100
+    unlockId: "netherite_pickaxe"
+    currency: "tokens" # 100 tokens
+```
+
+### Tipos de Moneda:
+
+| Valor    | Plugin           | Descripción               |
+| -------- | ---------------- | ------------------------- |
+| `vault`  | Vault + Economía | Dinero (EssentialsX, CMI) |
+| `money`  | Vault + Economía | Alias de vault            |
+| `points` | PlayerPoints     | Puntos de jugador         |
+| `tokens` | TokenManager     | Tokens                    |
+
+---
+
+## 📂 11. Categorías (v1.2)
 
 ```yaml
 categories:
@@ -324,7 +368,7 @@ categories:
 
 ---
 
-## ⌨️ 11. Comandos
+## ⌨️ 12. Comandos
 
 | Comando                | Descripción              | Permiso              |
 | ---------------------- | ------------------------ | -------------------- |
@@ -336,7 +380,7 @@ categories:
 
 ---
 
-## 🔑 12. Permisos
+## 🔑 13. Permisos
 
 | Permiso                        | Descripción                        |
 | ------------------------------ | ---------------------------------- |
@@ -352,7 +396,7 @@ categories:
 
 ---
 
-## 📊 13. Placeholders (PlaceholderAPI) (v1.3)
+## 📊 14. Placeholders (PlaceholderAPI) (v1.3)
 
 | Placeholder                     | Descripción                |
 | ------------------------------- | -------------------------- |
@@ -368,7 +412,7 @@ categories:
 
 ---
 
-## 🎯 14. Acciones Especiales
+## 🎯 15. Acciones Especiales
 
 | Acción                          | Descripción      |
 | ------------------------------- | ---------------- |
@@ -398,11 +442,15 @@ messages:
 
   # Requisitos (v1.7)
   requirementsMissing: "&c✖ Primero debes desbloquear: &f%requirements%"
+
+  # Múltiples Monedas (v1.8)
+  currencyNotAvailable: "&c✖ La moneda &f%currency% &cno está disponible."
+  notEnoughCurrency: "&c✖ No tienes suficiente %currency%. Necesitas &e%price%&c."
 ```
 
 ---
 
-## 🔧 16. Solución de Problemas
+## 🔧 17. Solución de Problemas
 
 ### Crash con ViaVersion:
 
@@ -432,10 +480,11 @@ settings:
 
 ---
 
-## 📜 17. Historial de Versiones
+## 📜 18. Historial de Versiones
 
 | Versión | Característica Principal              |
 | ------- | ------------------------------------- |
+| v1.8    | Múltiples Monedas                     |
 | v1.7    | Requisitos Previos                    |
 | v1.6    | Desbloqueos Temporales                |
 | v1.5    | Descuentos por Grupo + ViaVersion Fix |
@@ -447,12 +496,7 @@ settings:
 
 ---
 
-## 🚀 18. Próximas Versiones (Roadmap)
-
-### v1.8 - Múltiples Monedas
-
-- Soporte para PlayerPoints, TokenManager
-- Selector de moneda por item
+## 🚀 19. Próximas Versiones (Roadmap)
 
 ### v1.9 - Niveles de XP como Precio
 
@@ -479,4 +523,4 @@ settings:
 
 ---
 
-_BloquedPerms v1.7 - Sistema de Bloqueo de Recetas_
+_BloquedPerms v1.8 - Sistema de Bloqueo de Recetas_
