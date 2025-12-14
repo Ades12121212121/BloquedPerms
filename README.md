@@ -1,19 +1,18 @@
-# 📖 BloquedPerms Wiki v1.9
+# 📖 BloquedPerms Wiki v1.10
 
 > Sistema de Bloqueo de Recetas con Tienda GUI para Minecraft
 
 **Autor:** PCR087  
 **Spigot:** https://www.spigotmc.org/resources/130781/  
-**Versión Actual:** 1.9
+**Versión Actual:** 1.10
 
 ---
 
 ## 📥 1. Instalación
 
-1. Descarga `BloquedPerms-1.9.jar`
+1. Descarga `BloquedPerms-1.10.jar`
 2. Colócalo en la carpeta `/plugins/`
 3. Reinicia el servidor
-4. Reinicia el servidor
 
 ### Dependencias:
 
@@ -24,6 +23,7 @@
 | ⭕ Opcional   | PlayerPoints      | Puntos (v1.8)      |
 | ⭕ Opcional   | TokenManager      | Tokens (v1.8)      |
 | ⭕ Opcional   | PlaceholderAPI    | Placeholders       |
+| ⭕ Opcional   | WorldEdit         | Regiones (v1.10)   |
 | ⭕ Compatible | ViaVersion 5.6.0+ | Multiversión       |
 
 ---
@@ -395,7 +395,75 @@ items:
 
 ---
 
-## 📂 12. Categorías (v1.2)
+## 🗂️ 12. Regiones de Comandos (v1.10)
+
+Restringe comandos a zonas específicas del mapa.
+
+### Configuración en config.yml:
+
+```yaml
+regions:
+  enabled: true
+  blockOutsideRegion: true
+  outsideMessage: "&c✖ Este comando solo puede usarse en zonas específicas."
+```
+
+### Archivo de Región (regions/spawn.yml):
+
+```yaml
+displayName: "&a&lSpawn"
+world: "world"
+
+pos1:
+  x: -50
+  y: 0
+  z: -50
+
+pos2:
+  x: 50
+  y: 256
+  z: 50
+
+priority: 10
+
+# Comandos que SOLO funcionan en esta región
+allowedCommands:
+  - "shop"
+  - "tienda"
+  - "recetas"
+```
+
+**Permiso bypass:** `bloquedperms.regions.bypass`
+
+---
+
+## 📦 13. Items como Precio (v1.10)
+
+Cobra items del inventario como parte del precio.
+
+```yaml
+items:
+  netherite_pickaxe:
+    slot: 10
+    material: "NETHERITE_PICKAXE"
+    price: 2000
+    unlockId: "netherite_pickaxe"
+    itemCost:
+      DIAMOND: 64
+      NETHERITE_INGOT: 4
+
+  # Solo items (sin dinero)
+  special_item:
+    price: 0
+    unlockId: "special_item"
+    itemCost:
+      NETHER_STAR: 2
+      EMERALD_BLOCK: 16
+```
+
+---
+
+## 📂 14. Categorías (v1.2)
 
 ```yaml
 categories:
@@ -421,7 +489,7 @@ categories:
 
 ---
 
-## ⌨️ 13. Comandos
+## ⌨️ 15. Comandos
 
 | Comando                | Descripción              | Permiso              |
 | ---------------------- | ------------------------ | -------------------- |
@@ -433,7 +501,7 @@ categories:
 
 ---
 
-## 🔑 14. Permisos
+## 🔑 16. Permisos
 
 | Permiso                        | Descripción                        |
 | ------------------------------ | ---------------------------------- |
@@ -441,6 +509,7 @@ categories:
 | `bloquedperms.admin`           | Comandos de admin + notificaciones |
 | `bloquedperms.shop`            | Usar tiendas (default: true)       |
 | `bloquedperms.bypass`          | Saltarse todos los bloqueos        |
+| `bloquedperms.regions.bypass`  | Saltarse restricciones de regiones |
 | `bloquedperms.category.*`      | Acceso a todas las categorías      |
 | `bloquedperms.discount.vip`    | Descuento VIP (10%)                |
 | `bloquedperms.discount.mvp`    | Descuento MVP (20%)                |
@@ -449,7 +518,7 @@ categories:
 
 ---
 
-## 📊 15. Placeholders (PlaceholderAPI) (v1.3)
+## 📊 17. Placeholders (PlaceholderAPI) (v1.3)
 
 | Placeholder                     | Descripción                |
 | ------------------------------- | -------------------------- |
@@ -465,7 +534,7 @@ categories:
 
 ---
 
-## 🎯 16. Acciones Especiales
+## 🎯 18. Acciones Especiales
 
 | Acción                          | Descripción      |
 | ------------------------------- | ---------------- |
@@ -476,7 +545,7 @@ categories:
 
 ---
 
-## 💬 15. Mensajes (lang.yml)
+## 💬 19. Mensajes (lang.yml)
 
 ```yaml
 messages:
@@ -536,29 +605,25 @@ settings:
 
 ---
 
-## 📜 19. Historial de Versiones
+## 📜 21. Historial de Versiones
 
-| Versión | Característica Principal              |
-| ------- | ------------------------------------- |
-| v1.9    | Niveles de XP + Modo Economía         |
-| v1.8    | Múltiples Monedas                     |
-| v1.7    | Requisitos Previos                    |
-| v1.6    | Desbloqueos Temporales                |
-| v1.5    | Descuentos por Grupo + ViaVersion Fix |
-| v1.4    | Precios Dinámicos                     |
-| v1.3    | PlaceholderAPI                        |
-| v1.2    | Categorías                            |
-| v1.1    | Sistema de Páginas                    |
-| v1.0    | Versión inicial                       |
+| Versión | Característica Principal                 |
+| ------- | ---------------------------------------- |
+| v1.10   | Regiones de Comandos + Items como Precio |
+| v1.9    | Niveles de XP + Modo Economía            |
+| v1.8    | Múltiples Monedas                        |
+| v1.7    | Requisitos Previos                       |
+| v1.6    | Desbloqueos Temporales                   |
+| v1.5    | Descuentos por Grupo + ViaVersion Fix    |
+| v1.4    | Precios Dinámicos                        |
+| v1.3    | PlaceholderAPI                           |
+| v1.2    | Categorías                               |
+| v1.1    | Sistema de Páginas                       |
+| v1.0    | Versión inicial                          |
 
 ---
 
-## 🚀 20. Próximas Versiones (Roadmap)
-
-### v1.10 - Items como Precio
-
-- Cobrar items del inventario
-- Ej: 64 diamantes + $1000
+## 🚀 22. Próximas Versiones (Roadmap)
 
 ### v2.0 - Animaciones de GUI
 
@@ -575,4 +640,4 @@ settings:
 
 ---
 
-_BloquedPerms v1.8 - Sistema de Bloqueo de Recetas_
+_BloquedPerms v1.10 - Sistema de Bloqueo de Recetas_
