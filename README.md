@@ -1,18 +1,19 @@
-# 📖 BloquedPerms Wiki v1.8
+# 📖 BloquedPerms Wiki v1.9
 
 > Sistema de Bloqueo de Recetas con Tienda GUI para Minecraft
 
 **Autor:** PCR087  
 **Spigot:** https://www.spigotmc.org/resources/130781/  
-**Versión Actual:** 1.8
+**Versión Actual:** 1.9
 
 ---
 
 ## 📥 1. Instalación
 
-1. Descarga `BloquedPerms-1.7.jar`
+1. Descarga `BloquedPerms-1.9.jar`
 2. Colócalo en la carpeta `/plugins/`
 3. Reinicia el servidor
+4. Reinicia el servidor
 
 ### Dependencias:
 
@@ -342,7 +343,59 @@ items:
 
 ---
 
-## 📂 11. Categorías (v1.2)
+## 🎮 11. Niveles de XP + Modo Economía (v1.9)
+
+Ahora puedes elegir el modo de economía y cobrar niveles de XP.
+
+### Modo de Economía:
+
+```yaml
+# config.yml
+
+economy:
+  # "classic" - Solo Vault (compatibilidad)
+  # "advanced" - Múltiples monedas + XP
+  mode: "advanced"
+
+  showDetailedPrice: true
+  allowXpCost: true
+```
+
+### Cobrar XP:
+
+```yaml
+items:
+  # Item que cuesta dinero + XP
+  netherite_pickaxe:
+    slot: 10
+    material: "NETHERITE_PICKAXE"
+    price: 2000
+    unlockId: "netherite_pickaxe"
+    xpCost: 10 # Cuesta 10 niveles de XP
+
+  # Item que SOLO cuesta XP
+  special_item:
+    slot: 11
+    material: "NETHER_STAR"
+    price: 0 # Sin costo de dinero
+    unlockId: "special_item"
+    xpCost: 30 # Solo cuesta XP
+```
+
+### Diferencias entre Modos:
+
+| Característica    | Classic  | Advanced |
+| ----------------- | -------- | -------- |
+| Vault (dinero)    | ✅       | ✅       |
+| PlayerPoints      | ❌       | ✅       |
+| TokenManager      | ❌       | ✅       |
+| XP como precio    | ❌       | ✅       |
+| currency por item | Ignorado | ✅       |
+| xpCost por item   | Ignorado | ✅       |
+
+---
+
+## 📂 12. Categorías (v1.2)
 
 ```yaml
 categories:
@@ -368,7 +421,7 @@ categories:
 
 ---
 
-## ⌨️ 12. Comandos
+## ⌨️ 13. Comandos
 
 | Comando                | Descripción              | Permiso              |
 | ---------------------- | ------------------------ | -------------------- |
@@ -380,7 +433,7 @@ categories:
 
 ---
 
-## 🔑 13. Permisos
+## 🔑 14. Permisos
 
 | Permiso                        | Descripción                        |
 | ------------------------------ | ---------------------------------- |
@@ -396,7 +449,7 @@ categories:
 
 ---
 
-## 📊 14. Placeholders (PlaceholderAPI) (v1.3)
+## 📊 15. Placeholders (PlaceholderAPI) (v1.3)
 
 | Placeholder                     | Descripción                |
 | ------------------------------- | -------------------------- |
@@ -412,7 +465,7 @@ categories:
 
 ---
 
-## 🎯 15. Acciones Especiales
+## 🎯 16. Acciones Especiales
 
 | Acción                          | Descripción      |
 | ------------------------------- | ---------------- |
@@ -446,11 +499,14 @@ messages:
   # Múltiples Monedas (v1.8)
   currencyNotAvailable: "&c✖ La moneda &f%currency% &cno está disponible."
   notEnoughCurrency: "&c✖ No tienes suficiente %currency%. Necesitas &e%price%&c."
+  # XP (v1.9)
+  notEnoughXp: "&c✖ No tienes suficiente XP. Necesitas &b%required% niveles &c(tienes &f%current%&c)."
+  purchaseSuccessWithXp: "&a✔ Has desbloqueado &f%id% &apor &e%price% &7+ &b%xp% niveles"
 ```
 
 ---
 
-## 🔧 17. Solución de Problemas
+## 🔧 18. Solución de Problemas
 
 ### Crash con ViaVersion:
 
@@ -480,10 +536,11 @@ settings:
 
 ---
 
-## 📜 18. Historial de Versiones
+## 📜 19. Historial de Versiones
 
 | Versión | Característica Principal              |
 | ------- | ------------------------------------- |
+| v1.9    | Niveles de XP + Modo Economía         |
 | v1.8    | Múltiples Monedas                     |
 | v1.7    | Requisitos Previos                    |
 | v1.6    | Desbloqueos Temporales                |
@@ -496,12 +553,7 @@ settings:
 
 ---
 
-## 🚀 19. Próximas Versiones (Roadmap)
-
-### v1.9 - Niveles de XP como Precio
-
-- Cobrar niveles de experiencia
-- Solo XP o XP + dinero
+## 🚀 20. Próximas Versiones (Roadmap)
 
 ### v1.10 - Items como Precio
 
