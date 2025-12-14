@@ -1,16 +1,16 @@
-# 📖 BloquedPerms Wiki v1.10
+# 📖 BloquedPerms Wiki v1.11
 
 > Sistema de Bloqueo de Recetas con Tienda GUI para Minecraft
 
 **Autor:** PCR087  
 **Spigot:** https://www.spigotmc.org/resources/130781/  
-**Versión Actual:** 1.10
+**Versión Actual:** 1.11
 
 ---
 
 ## 📥 1. Instalación
 
-1. Descarga `BloquedPerms-1.10.jar`
+1. Descarga `BloquedPerms-1.11.jar`
 2. Colócalo en la carpeta `/plugins/`
 3. Reinicia el servidor
 
@@ -605,10 +605,33 @@ settings:
 
 ---
 
-## 📜 21. Historial de Versiones
+## ✔️ 19. Confirmación de Compra (v1.11)
+
+GUI de confirmación antes de comprar para evitar errores.
+
+```yaml
+confirmation:
+  enabled: true
+  minPrice: 500 # Solo confirmar compras ≥ $500
+  title: "&c&l¿Confirmar Compra?"
+```
+
+### Funcionamiento:
+
+1. Jugador hace click en item
+2. Si precio ≥ minPrice → Se abre GUI de confirmación
+3. Preview del item con precio, XP e items requeridos
+4. Click en ✔ CONFIRMAR → Procesa compra
+5. Click en ✖ CANCELAR → Vuelve a tienda
+6. Expira después de 5 minutos
+
+---
+
+## 📜 22. Historial de Versiones
 
 | Versión | Característica Principal                 |
 | ------- | ---------------------------------------- |
+| v1.11   | Confirmación de Compra                   |
 | v1.10   | Regiones de Comandos + Items como Precio |
 | v1.9    | Niveles de XP + Modo Economía            |
 | v1.8    | Múltiples Monedas                        |
@@ -623,7 +646,12 @@ settings:
 
 ---
 
-## 🚀 22. Próximas Versiones (Roadmap)
+## 🚀 23. Próximas Versiones (Roadmap)
+
+### v1.12 - Historial de Compras
+
+- Guardar historial de compras por jugador
+- Comando /bloquedperms history
 
 ### v2.0 - Animaciones de GUI
 
@@ -640,4 +668,4 @@ settings:
 
 ---
 
-_BloquedPerms v1.10 - Sistema de Bloqueo de Recetas_
+_BloquedPerms v1.11 - Sistema de Bloqueo de Recetas_
