@@ -1,16 +1,16 @@
-# 📖 BloquedPerms Wiki v1.12
+# 📖 BloquedPerms Wiki v1.13
 
 > Sistema de Bloqueo de Recetas con Tienda GUI para Minecraft
 
 **Autor:** PCR087  
 **Spigot:** https://www.spigotmc.org/resources/130781/  
-**Versión Actual:** 1.12
+**Versión Actual:** 1.13
 
 ---
 
 ## 📥 1. Instalación
 
-1. Descarga `BloquedPerms-1.12.jar`
+1. Descarga `BloquedPerms-1.13.jar`
 2. Colócalo en la carpeta `/plugins/`
 3. Reinicia el servidor
 
@@ -692,12 +692,55 @@ history:
 
 ---
 
-## 🚀 24. Próximas Versiones (Roadmap)
+## 💰 21. Devoluciones (v1.13)
 
-### v1.13 - Devoluciones
+Permite a los jugadores devolver items y recuperar parte del dinero.
 
-- Sistema de reembolso parcial
-- Configurable por item
+```yaml
+refund:
+  enabled: true
+  defaultPercent: 50 # 50% del precio original
+  cooldownSeconds: 300 # 5 minutos de espera
+  maxPerDay: 3 # 3 devoluciones por día
+  refundXp: false
+  refundItems: false
+```
+
+### Comando:
+
+```
+/bloquedperms refund <id>
+```
+
+---
+
+## 📜 24. Historial de Versiones
+
+| Versión | Característica Principal                 |
+| ------- | ---------------------------------------- |
+| v1.13   | Devoluciones                             |
+| v1.12   | Historial de Compras                     |
+| v1.11   | Confirmación de Compra                   |
+| v1.10   | Regiones de Comandos + Items como Precio |
+| v1.9    | Niveles de XP + Modo Economía            |
+| v1.8    | Múltiples Monedas                        |
+| v1.7    | Requisitos Previos                       |
+| v1.6    | Desbloqueos Temporales                   |
+| v1.5    | Descuentos por Grupo + ViaVersion Fix    |
+| v1.4    | Precios Dinámicos                        |
+| v1.3    | PlaceholderAPI                           |
+| v1.2    | Categorías                               |
+| v1.1    | Sistema de Páginas                       |
+| v1.0    | Versión inicial                          |
+
+---
+
+## 🚀 25. Próximas Versiones (Roadmap)
+
+### v1.14 - Cooldown de Compra
+
+- Tiempo de espera entre compras
+- Evitar spam de clicks
 
 ### v2.0 - Animaciones de GUI
 
@@ -714,4 +757,4 @@ history:
 
 ---
 
-_BloquedPerms v1.12 - Sistema de Bloqueo de Recetas_
+_BloquedPerms v1.13 - Sistema de Bloqueo de Recetas_
