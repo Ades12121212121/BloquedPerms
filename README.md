@@ -1,16 +1,16 @@
-# 📖 BloquedPerms Wiki v1.13
+# 📖 BloquedPerms Wiki v1.14
 
 > Sistema de Bloqueo de Recetas con Tienda GUI para Minecraft
 
 **Autor:** PCR087  
 **Spigot:** https://www.spigotmc.org/resources/130781/  
-**Versión Actual:** 1.13
+**Versión Actual:** 1.14
 
 ---
 
 ## 📥 1. Instalación
 
-1. Descarga `BloquedPerms-1.13.jar`
+1. Descarga `BloquedPerms-1.14.jar`
 2. Colócalo en la carpeta `/plugins/`
 3. Reinicia el servidor
 
@@ -735,12 +735,51 @@ refund:
 
 ---
 
-## 🚀 25. Próximas Versiones (Roadmap)
+## ⏱️ 22. Cooldown de Compra (v1.14)
 
-### v1.14 - Cooldown de Compra
+Previene spam de clicks y limita compras por tiempo.
 
-- Tiempo de espera entre compras
-- Evitar spam de clicks
+```yaml
+cooldown:
+  enabled: true
+  globalMs: 1000 # 1 segundo entre compras
+  itemMs: 5000 # 5 segundos por item
+  showMessage: true
+```
+
+- **Cooldown global:** Esperar entre cualquier compra
+- **Cooldown por item:** Esperar para comprar el mismo item
+
+---
+
+## 📜 25. Historial de Versiones
+
+| Versión | Característica Principal                 |
+| ------- | ---------------------------------------- |
+| v1.14   | Cooldown de Compra                       |
+| v1.13   | Devoluciones                             |
+| v1.12   | Historial de Compras                     |
+| v1.11   | Confirmación de Compra                   |
+| v1.10   | Regiones de Comandos + Items como Precio |
+| v1.9    | Niveles de XP + Modo Economía            |
+| v1.8    | Múltiples Monedas                        |
+| v1.7    | Requisitos Previos                       |
+| v1.6    | Desbloqueos Temporales                   |
+| v1.5    | Descuentos por Grupo + ViaVersion Fix    |
+| v1.4    | Precios Dinámicos                        |
+| v1.3    | PlaceholderAPI                           |
+| v1.2    | Categorías                               |
+| v1.1    | Sistema de Páginas                       |
+| v1.0    | Versión inicial                          |
+
+---
+
+## 🚀 26. Próximas Versiones (Roadmap)
+
+### v1.15 - Logros/Achievements
+
+- Sistema de logros por compras
+- Recompensas por completar sets
 
 ### v2.0 - Animaciones de GUI
 
@@ -757,4 +796,4 @@ refund:
 
 ---
 
-_BloquedPerms v1.13 - Sistema de Bloqueo de Recetas_
+_BloquedPerms v1.14 - Sistema de Bloqueo de Recetas_
